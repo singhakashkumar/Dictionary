@@ -22,14 +22,19 @@ def translate(word):
     else:
         print("\nThe word doesn't exists in the dataset.")
 
-word=input("\nEnter the word to find it's meaning:")
-word=word.lower();
-listOfWord=translate(word)
-if(listOfWord!=None and len(listOfWord)>0):
-    for i in listOfWord:
-        print("\n"+word.upper()+" :",end=" ")
-        print(i)
-    print()
+while True:
+    word=input("\nEnter the word to find it's meaning:")
+    word=word.lower();
+    listOfWord=translate(word)
+    if(listOfWord!=None and len(listOfWord)>0):
+        for i in listOfWord:
+            print("\n"+word.upper()+" :-",end=" ")
+            print(i)
+        print()
+    one_more=input("Do you want to search more meaningful words? (y/n) :")
+    if(one_more.lower()!='y'):
+        break
+    
 
 '''
 checkInData=word in data
