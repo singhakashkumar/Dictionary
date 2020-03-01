@@ -9,8 +9,10 @@ def translate(word):
     word_present=word in data
     if word_present:
         return data[word]
-    elif word.title() in data:
-        return data[word.title()]
+    elif word.title() in data: #for nouns like Delhi
+        return data[word.title()] 
+    elif word.upper() in data: #for acronyms like AIDS
+        return data[word.upper()]
     elif len(get_close_matches(word,data_keys))>0:
         user_correction=input("\nDid you mean %s instead of word? Enter (y/n):" %get_close_matches(word,data_keys)[0])
         if user_correction.lower()=='y':
